@@ -1,6 +1,6 @@
 {
   "name": "@magic3t/types",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Shared TypeScript types for Magic3T",
   "module": "index.ts",
   "type": "module",

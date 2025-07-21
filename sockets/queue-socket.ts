@@ -1,6 +1,6 @@
 export const enum QueueServerEvents {
   QueueRejected = 'queueRejected',
-  QueueAcepted = 'queueAcepted',
+  QueueAccepted = 'queueAccepted',
   QueueModes = 'queueModes',
   MatchFound = 'matchFound',
   UpdateUserCount = 'updateUserCount',
@@ -26,7 +26,9 @@ export type UserCountData = {
 
 export interface QueueServerEventsMap {
   [QueueServerEvents.QueueRejected](reason?: string): void
-  [QueueServerEvents.QueueAcepted](payload: { mode: 'casual' | 'ranked' }): void
+  [QueueServerEvents.QueueAccepted](payload: {
+    mode: 'casual' | 'ranked'
+  }): void
   [QueueServerEvents.QueueModes](payload: {
     casual: boolean
     ranked: boolean

@@ -10,14 +10,14 @@ export interface MatchModelTeam {
   lp_gain: number
 }
 
-export enum GameMode {
+export const enum GameMode {
   Casual = 0b00,
   Ranked = 0b10,
   PvP = 0b00,
   PvC = 0b01,
 }
 
-export enum MatchEventType {
+export const enum MatchEventType {
   Choice = 0,
   Forfeit = 1,
   Timeout = 2,
