@@ -1,4 +1,4 @@
-export const enum ServerQueueEvents {
+export const enum QueueServerEvents {
   QueueRejected = 'queueRejected',
   QueueAcepted = 'queueAcepted',
   QueueModes = 'queueModes',
@@ -6,7 +6,7 @@ export const enum ServerQueueEvents {
   UpdateUserCount = 'updateUserCount',
 }
 
-export const enum ClientQueueEvents {
+export const enum QueueClientEvents {
   Interact = 'interact',
   Fair = 'fair',
   Bot0 = 'bot-0',
@@ -25,27 +25,27 @@ export type UserCountData = {
 }
 
 export interface QueueServerEventsMap {
-  [ServerQueueEvents.QueueRejected](reason?: string): void
-  [ServerQueueEvents.QueueAcepted](payload: { mode: 'casual' | 'ranked' }): void
-  [ServerQueueEvents.QueueModes](payload: {
+  [QueueServerEvents.QueueRejected](reason?: string): void
+  [QueueServerEvents.QueueAcepted](payload: { mode: 'casual' | 'ranked' }): void
+  [QueueServerEvents.QueueModes](payload: {
     casual: boolean
     ranked: boolean
   }): void
-  [ServerQueueEvents.MatchFound](data: {
+  [QueueServerEvents.MatchFound](data: {
     matchId: string
     opponentId: string
   }): void
-  [ServerQueueEvents.UpdateUserCount](data: UserCountData): void
+  [QueueServerEvents.UpdateUserCount](data: UserCountData): void
 }
 
 export interface QueueClientEventsMap {
-  [ClientQueueEvents.Interact](): void
-  [ClientQueueEvents.Fair](): void
-  [ClientQueueEvents.Bot0](): void
-  [ClientQueueEvents.Bot1](): void
-  [ClientQueueEvents.Bot2](): void
-  [ClientQueueEvents.Bot3](): void
-  [ClientQueueEvents.Casual](): void
-  [ClientQueueEvents.Ranked](): void
-  [ClientQueueEvents.Dequeue](): void
+  [QueueClientEvents.Interact](): void
+  [QueueClientEvents.Fair](): void
+  [QueueClientEvents.Bot0](): void
+  [QueueClientEvents.Bot1](): void
+  [QueueClientEvents.Bot2](): void
+  [QueueClientEvents.Bot3](): void
+  [QueueClientEvents.Casual](): void
+  [QueueClientEvents.Ranked](): void
+  [QueueClientEvents.Dequeue](): void
 }

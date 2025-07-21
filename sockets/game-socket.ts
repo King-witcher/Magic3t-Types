@@ -1,6 +1,6 @@
 import type { Choice, Profile, Rating, Team } from '../common'
 
-export const enum ClientMatchEvents {
+export const enum MatchClientEvents {
   GetAssignments = 'get-assignments',
   GetState = 'get-state',
   Pick = 'pick',
@@ -8,7 +8,7 @@ export const enum ClientMatchEvents {
   Surrender = 'surrender',
 }
 
-export const enum ServerMatchEvents {
+export const enum MatchServerEvents {
   Message = 'message',
   /// Sends the player assignments
   Assignments = 'assignments',
@@ -65,16 +65,16 @@ export type MatchState = {
 }
 
 export interface GameServerEventsMap {
-  [ServerMatchEvents.Message](message: MessageData): void
-  [ServerMatchEvents.Assignments](assignments: AssignmentsData): void
-  [ServerMatchEvents.StateReport](state: MatchState): void
-  [ServerMatchEvents.MatchReport](results: MatchResults): void
+  [MatchServerEvents.Message](message: MessageData): void
+  [MatchServerEvents.Assignments](assignments: AssignmentsData): void
+  [MatchServerEvents.StateReport](state: MatchState): void
+  [MatchServerEvents.MatchReport](results: MatchResults): void
 }
 
 export interface GameClientEventsMap {
-  [ClientMatchEvents.GetAssignments](): void
-  [ClientMatchEvents.GetState](): void
-  [ClientMatchEvents.Message](message: string): void
-  [ClientMatchEvents.Pick](choice: Choice): void
-  [ClientMatchEvents.Surrender](): void
+  [MatchClientEvents.GetAssignments](): void
+  [MatchClientEvents.GetState](): void
+  [MatchClientEvents.Message](message: string): void
+  [MatchClientEvents.Pick](choice: Choice): void
+  [MatchClientEvents.Surrender](): void
 }
