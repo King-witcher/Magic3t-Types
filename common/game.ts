@@ -7,13 +7,11 @@ export const enum Team {
   Chaos = 1,
 }
 
-export interface MatchDtoTeam {
-  id: string
-  nickname: string
-  league: League
-  division: number | null
-  lpGain: number
-  matchScore: number
+export const enum GameMode {
+  Casual = 0b00,
+  Ranked = 0b10,
+  PvP = 0b00,
+  PvC = 0b01,
 }
 
 export const enum MatchEventType {
@@ -27,6 +25,15 @@ type BaseMatchEvent = {
   event: MatchEventType
   side: Team
   time: number
+}
+
+export interface MatchDtoTeam {
+  id: string
+  nickname: string
+  league: League
+  division: number | null
+  lpGain: number
+  matchScore: number
 }
 
 export type MatchDtoEvent = BaseMatchEvent &

@@ -1,4 +1,4 @@
-import type { Choice, League, Team } from '../common'
+import type { Choice, GameMode, League, MatchEventType, Team } from '../common'
 import type { WithId } from '../firebase'
 
 export interface MatchModelTeam {
@@ -8,20 +8,6 @@ export interface MatchModelTeam {
   division: number | null
   score: number
   lp_gain: number
-}
-
-export const enum GameMode {
-  Casual = 0b00,
-  Ranked = 0b10,
-  PvP = 0b00,
-  PvC = 0b01,
-}
-
-export const enum MatchEventType {
-  Choice = 0,
-  Forfeit = 1,
-  Timeout = 2,
-  Message = 3,
 }
 
 type BaseMatchEvent = {
