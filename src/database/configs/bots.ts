@@ -1,4 +1,4 @@
-import type { WithId } from '../../firebase'
+import type { WithId } from '../with-id'
 
 export type BotConfig = { uid: string } & (
   | {
@@ -10,11 +10,11 @@ export type BotConfig = { uid: string } & (
     }
 )
 
-export const enum BotName {
+export enum BotName {
   Bot0 = 'bot0',
   Bot1 = 'bot1',
   Bot2 = 'bot2',
   Bot3 = 'bot3',
 }
 
-export type BotConfigModel = WithId<'bots'> & Record<BotName, BotConfig>
+export type BotConfigRow = WithId<'bots'> & Record<BotName, BotConfig>

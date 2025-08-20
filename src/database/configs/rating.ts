@@ -1,4 +1,4 @@
-import type { WithId } from '../../firebase'
+import type { WithId } from '../with-id'
 
 export interface RatingConfigModel extends WithId<'rating'> {
   /** How much time a player with RD=40 would take to go back to 350, in days. */

@@ -1,3 +1,3 @@
-export * from './configs'
 export * from './match'
+export * from './rating'
 export * from './user'

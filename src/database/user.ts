@@ -1,19 +1,24 @@
-import type { UserRole } from '../common'
-import type { WithId } from '../firebase'
+import type { WithId } from './with-id'
 
-export interface GlickoModel {
+export interface Glicko {
   rating: number
   deviation: number
   timestamp: Date
 }
 
-export interface EloModel {
+export interface Elo {
   score: number
   matches: number
   k: number
 }
 
-export interface UserModel extends WithId {
+export enum UserRole {
+  Player = 'player',
+  Creator = 'creator',
+  Bot = 'bot',
+}
+
+export interface UserRow extends WithId {
   identification: {
     unique_id: string // nickname.toLower() without spaces
     nickname: string
@@ -27,12 +32,16 @@ export interface UserModel extends WithId {
 
   role: UserRole
 
-  glicko: GlickoModel
-  elo: EloModel
+  glicko: Glicko
+  elo: Elo
 
   stats: {
     wins: number
     draws: number
     defeats: number
   }
+}
+
+export interface IconAssignmentRow extends WithId {
+  date: Date
 }

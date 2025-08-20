@@ -1,12 +1,12 @@
-export const enum QueueServerEvents {
+export enum QueueServerEvents {
   QueueRejected = 'queueRejected',
   QueueAccepted = 'queueAccepted',
   QueueModes = 'queueModes',
   MatchFound = 'matchFound',
-  UpdateUserCount = 'updateUserCount',
+  UserCount = 'userCount',
 }
 
-export const enum QueueClientEvents {
+export enum QueueClientEvents {
   Interact = 'interact',
   Fair = 'fair',
   Bot0 = 'bot-0',
@@ -18,7 +18,7 @@ export const enum QueueClientEvents {
   Dequeue = 'dequeue',
 }
 
-export type UserCountData = {
+export type UpdateUserCountPayload = {
   connected: number
   casual: { queue: number; inGame: number }
   ranked: { queue: number; inGame: number }
@@ -37,7 +37,7 @@ export interface QueueServerEventsMap {
     matchId: string
     opponentId: string
   }): void
-  [QueueServerEvents.UpdateUserCount](data: UserCountData): void
+  [QueueServerEvents.UserCount](data: UpdateUserCountPayload): void
 }
 
 export interface QueueClientEventsMap {

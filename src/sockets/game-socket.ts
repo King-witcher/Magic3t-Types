@@ -1,6 +1,8 @@
-import type { Choice, Profile, Rating, Team } from '../common'
+import type { RatingPayload } from '../api/common/rating'
+import type { UserPayload } from '../api/common/user'
+import type { Choice, Team } from '../common'
 
-export const enum MatchClientEvents {
+export enum MatchClientEvents {
   GetAssignments = 'get-assignments',
   GetState = 'get-state',
   Pick = 'pick',
@@ -8,7 +10,7 @@ export const enum MatchClientEvents {
   Surrender = 'surrender',
 }
 
-export const enum MatchServerEvents {
+export enum MatchServerEvents {
   Message = 'message',
   /// Sends the player assignments
   Assignments = 'assignments',
@@ -18,37 +20,37 @@ export const enum MatchServerEvents {
   MatchReport = 'match-report',
 }
 
-export type MessageData = {
+export type MessagePayload = {
   message: string
   sender: string
   time: number
 }
 
-export type AssignmentsData = {
+export type AssignmentsPayload = {
   [Team.Order]: {
-    profile: Profile
+    profile: UserPayload
   }
   [Team.Chaos]: {
-    profile: Profile
+    profile: UserPayload
   }
 }
 
-export type MatchResults = {
+export type MatchReportPayload = {
   matchId: string
   winner: Team | null
   [Team.Order]: {
     score: number
     lpGain: number
-    newRating: Rating
+    newRating: RatingPayload
   }
   [Team.Chaos]: {
     score: number
     lpGain: number
-    newRating: Rating
+    newRating: RatingPayload
   }
 }
 
-export type MatchState = {
+export type StateReportPayload = {
   [Team.Order]: {
     timeLeft: number
     choices: Choice[]
@@ -65,10 +67,10 @@ export type MatchState = {
 }
 
 export interface GameServerEventsMap {
-  [MatchServerEvents.Message](message: MessageData): void
-  [MatchServerEvents.Assignments](assignments: AssignmentsData): void
-  [MatchServerEvents.StateReport](state: MatchState): void
-  [MatchServerEvents.MatchReport](results: MatchResults): void
+  [MatchServerEvents.Message](message: MessagePayload): void
+  [MatchServerEvents.Assignments](assignments: AssignmentsPayload): void
+  [MatchServerEvents.StateReport](state: StateReportPayload): void
+  [MatchServerEvents.MatchReport](results: MatchReportPayload): void
 }
 
 export interface GameClientEventsMap {
