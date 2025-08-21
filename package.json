@@ -1,10 +1,11 @@
 {
   "name": "@magic3t/types",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Shared TypeScript types for Magic3T",
   "module": "index.ts",
   "files": [
-    "src"
+    "src",
+    "index.ts"
   ],
   "scripts": {
     "typecheck": "tsc",
