@@ -3,7 +3,7 @@ import type { RatingPayload } from './rating'
 
 export type UserPayload = {
   id: string
-  nickname: string | null
+  nickname: string
   summonerIcon: number
   role: UserRole
   rating: RatingPayload
