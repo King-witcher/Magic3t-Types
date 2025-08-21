@@ -1,4 +1,4 @@
-export enum QueueServerEvents {
+export const enum QueueServerEvents {
   QueueRejected = 'queueRejected',
   QueueAccepted = 'queueAccepted',
   QueueModes = 'queueModes',
@@ -6,7 +6,7 @@ export enum QueueServerEvents {
   UserCount = 'userCount',
 }
 
-export enum QueueClientEvents {
+export const enum QueueClientEvents {
   Interact = 'interact',
   Fair = 'fair',
   Bot0 = 'bot-0',

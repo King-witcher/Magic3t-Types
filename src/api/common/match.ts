@@ -1,7 +1,7 @@
 import { Choice, Team } from '../../common'
 import type { League } from './rating'
 
-export enum MatchPayloadEvents {
+export const enum MatchPayloadEvents {
   Choice = 0,
   Forfeit = 1,
   Timeout = 2,

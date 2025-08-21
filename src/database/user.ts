@@ -12,7 +12,7 @@ export interface Elo {
   k: number
 }
 
-export enum UserRole {
+export const enum UserRole {
   Player = 'player',
   Creator = 'creator',
   Bot = 'bot',

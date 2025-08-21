@@ -3,7 +3,7 @@ import type { League } from '../api/common/rating'
 import type { Choice, Team } from '../common'
 import type { WithId } from './with-id'
 
-export enum GameMode {
+export const enum GameMode {
   Casual = 0b00,
   Ranked = 0b10,
   PvP = 0b00,

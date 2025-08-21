@@ -3,14 +3,13 @@
     // Enable latest features
     "target": "esnext",
     "module": "esnext",
-    "outDir": "dist",
 
     // Bundler mode
 
     // Emit
+    "moduleResolution": "bundler",
     "declaration": true,
-    "noEmit": false,
-    "sourceMap": false,
+    "noEmit": true,
     "composite": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -18,8 +17,7 @@
 
     // Best practices
     "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true
+    "skipLibCheck": true
   },
   "include": ["./src/**/*.ts"]
 }

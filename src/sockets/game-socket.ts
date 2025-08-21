@@ -2,7 +2,7 @@ import type { RatingPayload } from '../api/common/rating'
 import type { UserPayload } from '../api/common/user'
 import type { Choice, Team } from '../common'
 
-export enum MatchClientEvents {
+export const enum MatchClientEvents {
   GetAssignments = 'get-assignments',
   GetState = 'get-state',
   Pick = 'pick',
@@ -10,7 +10,7 @@ export enum MatchClientEvents {
   Surrender = 'surrender',
 }
 
-export enum MatchServerEvents {
+export const enum MatchServerEvents {
   Message = 'message',
   /// Sends the player assignments
   Assignments = 'assignments',

@@ -1,4 +1,4 @@
-export enum League {
+export const enum League {
   Provisional = 'provisional',
   Bronze = 'bronze',
   Silver = 'silver',

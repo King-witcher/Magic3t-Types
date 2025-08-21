@@ -2,13 +2,12 @@
   "name": "@magic3t/types",
   "version": "4.0.0",
   "description": "Shared TypeScript types for Magic3T",
-  "module": "src/index.ts",
-  "type": "module",
+  "module": "index.ts",
   "files": [
     "src"
   ],
   "scripts": {
-    "build": "tsc",
+    "typecheck": "tsc",
     "watch": "tsc --watch"
   },
   "keywords": [

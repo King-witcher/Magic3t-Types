@@ -10,7 +10,7 @@ export type BotConfig = { uid: string } & (
     }
 )
 
-export enum BotName {
+export const enum BotName {
   Bot0 = 'bot0',
   Bot1 = 'bot1',
   Bot2 = 'bot2',
